@@ -38,7 +38,7 @@ numbers = input("Введите вещественные числа через �
 
 
 def DiffMinMaxFract(numbers):
-    fractList = []
+    fractList = [0,0]
     for i in numbers:
         fract = float(i)-math.floor(float(i))
         if fract != 0:
@@ -54,3 +54,16 @@ def DiffMinMaxFract(numbers):
 
 
 print("Fract diff: ", DiffMinMaxFract(numbers))
+
+# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+number = int(input("Введите число: "))
+
+
+def DecToBinary(number, base):
+    binNumber = ""
+    while (number >= base):
+        binNumber += str(number % base)
+        number = math.floor(number/base)
+    return binNumber+"1"
+
+print(DecToBinary(number,2)[::-1])
