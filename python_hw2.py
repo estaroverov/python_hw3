@@ -38,11 +38,10 @@ numbers = input("Введите вещественные числа через �
 
 
 def DiffMinMaxFract(numbers):
-    fractList = [0, 0]
+    fractList = []
     for i in numbers:
         fract = float(i)-math.floor(float(i))
-        if fract != 0:
-            fractList.append(fract)
+        fractList.append(fract)
     minFract = fractList[0]
     maxFract = fractList[1]
     for i in fractList:
