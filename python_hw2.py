@@ -14,7 +14,7 @@ def ListOddSum(numbers):
     return sum
 
 
-print("Summ: ",ListOddSum(numbers))
+print("Summ: ", ListOddSum(numbers))
 
 # Напишите программу, которая найдёт произведение пар чисел списка.
 # Парой считаем первый и последний элемент, второй и предпоследний и т.д.
@@ -29,16 +29,20 @@ def CalcMultPairs(numbers):
         counter += 1
     return multList
 
+
 print("Multiple pairs:", CalcMultPairs(numbers))
 
 # Задайте список из вещественных чисел. Напишите программу,
 # которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
 numbers = input("Введите вещественные числа через пробел: ").split()
+
+
 def DiffMinMaxFract(numbers):
     fractList = []
     for i in numbers:
         fract = float(i)-math.floor(float(i))
-        fractList.append(fract)
+        if fract != 0:
+            fractList.append(fract)
     minFract = fractList[0]
     maxFract = fractList[1]
     for i in fractList:
@@ -46,6 +50,7 @@ def DiffMinMaxFract(numbers):
             minFract = i
         if i > maxFract:
             maxFract = i
-    return round(maxFract - minFract,3)
+    return round(maxFract - minFract, 3)
+
 
 print("Fract diff: ", DiffMinMaxFract(numbers))
