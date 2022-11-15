@@ -38,7 +38,7 @@ numbers = input("Введите вещественные числа через �
 
 
 def DiffMinMaxFract(numbers):
-    fractList = [0,0]
+    fractList = [0, 0]
     for i in numbers:
         fract = float(i)-math.floor(float(i))
         if fract != 0:
@@ -66,4 +66,27 @@ def DecToBinary(number, base):
         number = math.floor(number/base)
     return binNumber+"1"
 
-print(DecToBinary(number,2)[::-1])
+
+print(DecToBinary(number, 2)[::-1])
+
+# Задайте число. Составьте список чисел Фибоначчи,
+# в том числе для отрицательных индексов.
+
+number = int(input("Введите число: "))
+
+
+def NegaFibo(number):
+    fiboList = [0,1]
+    fibo = [0, 1]
+    counter = 2
+    while counter <= number:
+        if counter == 2:
+            fibo.append(fibo[0]+fibo[1])
+        else:
+            fibo.append(fibo[-2]+fibo[-1])
+        fiboList.append(pow(-1, counter+1)*fibo[-1])
+        counter += 1
+    return fiboList[:0:-1]+fibo
+
+
+print(NegaFibo(number))
